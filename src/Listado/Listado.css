@@ -1,0 +1,21 @@
+ul li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: #333;
+    list-style-type: none;
+    }
+
+h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+    }
+
+p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    color: #444;
+    }

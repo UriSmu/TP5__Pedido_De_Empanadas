@@ -34,28 +34,30 @@ const Formulario = ({agregarPedido}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
+    // Verificar si el nombre y sector están completos
     if (!formCampos.nombre || !formCampos.sector) {
       alert('Nombre y sector son obligatorios');
       return;
     }
-
+  
+    // Verificar si todos los gustos tienen valores completos
     for (let i = 0; i < gustos.length; i++) {
-      if (!gustos[i].gusto || !gustos[i].cantidad) {
-        alert(`Faltan datos en el gusto #${i + 1}`);
+      if (!gustos[i].gusto || !gustos[i].cantidad || gustos[i].cantidad <= 0) {
+        alert(`Faltan datos en el gusto #${i + 1} o la cantidad es incorrecta`);
         return;
       }
     }
 
-    const nuevaCita = {
+    const nuevoPedido = {
       id: Date.now(),
       ...formCampos,
-      gustos: gustos
+      gustos: gustos,
     };
 
-    if(confirm("Seguro que desea agregar la cita?")) //EL CONFIRM LO HABÍA PUESTO EN LA FUNCIÓN "agregarPedido" en App; pero si no la quería agregar perdía lo que ingresé en los inputs. Ahora, no
+    if(confirm("Seguro que desea agregar su pedido?")) //EL CONFIRM LO HABÍA PUESTO EN LA FUNCIÓN "agregarPedido" en App; pero si no la quería agregar perdía lo que ingresé en los inputs. Ahora, no
     {
-      agregarPedido(nuevaCita);
+      agregarPedido(nuevoPedido);
 
       //ACÁ LIMPIAMOS EL FORM
       setFormCampos({ nombre: '', sector: '' });
@@ -69,7 +71,7 @@ const Formulario = ({agregarPedido}) => {
     <div className="one-half column">
       <h2>Elegir empanadas</h2>
       <form onSubmit={handleSubmit}>
-        <label>Nombre</label>
+        <label>Nombre y Apellido</label>
         <input type="text" name="nombre" className="u-full-width" value={formCampos.nombre} onChange={handleChange} />
 
         <label>¿En qué sector trabaja?</label>
@@ -84,7 +86,7 @@ const Formulario = ({agregarPedido}) => {
           <option value="Administración">Administración</option>
           <option value="Mantenimiento">Mantenimiento</option>
         </select>
-
+    
         {gustos.map((g, index) => (
           <GustoInput
             key={index}
@@ -95,13 +97,9 @@ const Formulario = ({agregarPedido}) => {
           />
         ))}
 
-        <button type="button" onClick={agregarOtroGusto} className="u-full-width">
-          ¡Otro gusto!
-        </button>
+        <button type="button" onClick={agregarOtroGusto} className="u-full-width">¡Otro gusto!</button>
 
-        <button type="submit" className="u-full-width button-primary">
-          Pedir
-        </button>
+        <button type="submit" className="u-full-width button-primary">Pedir</button>
       </form>
     </div>
   );
