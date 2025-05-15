@@ -42,8 +42,12 @@ const Listado = ({pedido}) => {
             )}
         </div>
         <div className="one-half column">
-            <h2>PEDIDOS</h2>
-            {mostrarPedidos}
+        <h2>PEDIDOS</h2>
+            <div className="pedido-container">
+            <div className="pedido-items">
+                {mostrarPedidos}
+            </div>
+        </div>
         </div>
         </>
     )
