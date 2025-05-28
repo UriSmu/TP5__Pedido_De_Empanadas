@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/UriSmu/TP5__Pedido_De_Empanadas.git",
+  "homepage": "https://github.com/UriSmu/TP5__Pedido_De_Empanadas",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

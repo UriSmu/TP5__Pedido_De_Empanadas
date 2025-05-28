@@ -36,3 +36,9 @@ p {
     color: #000000;
     font-size: 1.3rem;
 }
+
+.listado-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

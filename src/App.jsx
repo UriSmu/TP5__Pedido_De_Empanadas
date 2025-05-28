@@ -11,10 +11,10 @@ function App() {
   }
 
   return (
-    <>
-      <Formulario agregarPedido={agregarPedido}/>
-      <Listado pedido={pedido}/>
-    </>
+    <div className="layout-dos-columnas">
+      <Formulario agregarPedido={agregarPedido} />
+      <Listado pedido={pedido} />
+    </div>
   )
 }
 

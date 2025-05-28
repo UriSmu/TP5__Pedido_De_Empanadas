@@ -28,7 +28,7 @@ const Listado = ({pedido}) => {
       ));
     
     return(
-        <>
+      <div className="listado-wrapper">
         <div className="one-half column">
             <h2>PEDIDO TOTAL</h2>
             {gustosTotales.length > 0 ? (
@@ -49,7 +49,7 @@ const Listado = ({pedido}) => {
             </div>
         </div>
         </div>
-        </>
+      </div>
     )
 }
 
