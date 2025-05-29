@@ -37,12 +37,16 @@ h2 {
   .container {
       width: 85%;
   }
+  .column,.columns {
+    margin-left: 0%;
+}
 }
 @media (min-width: 400px) {
   .container {
       width: 85%;
       padding: 0;
   }
+  
 }
 .container {
   position: relative;
@@ -61,9 +65,4 @@ h2 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.one-half.column {
-  width: 48%;
-  box-sizing: border-box;
 }
